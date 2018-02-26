@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       seen: false,
-      informations: "i am from children"
+      informations: "i am from children" //子组件信息传父组件
     };
   },
   props: ["tellchildren"],
@@ -21,8 +21,8 @@ export default {
       console.log(1);
       this.seen = true;
     },
-    clickCh: function() {
-      this.$.emit("children-tell-me", this.informations);
+    clickCh: function() {//子组件信息传父组件
+      this.$emit("children-tell-me", this.informations);
     }
   }
 };
