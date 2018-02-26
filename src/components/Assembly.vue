@@ -16,12 +16,12 @@ export default {
     };
   },
   props: ["tellchildren"],
-  mothods: {
+  methods: {
     clickMe: function() {
-      console.log(1);
       this.seen = true;
     },
-    clickCh: function() {//子组件信息传父组件
+    clickCh: function() {
+      //子组件信息传父组件
       this.$emit("children-tell-me", this.informations);
     }
   }
