@@ -2,16 +2,16 @@
   <div id="app">
     <router-view></router-view>
     <tabbar>
-          <tabbar-item>
+          <tabbar-item link="/home">
               <span slot="label">首页</span>
           </tabbar-item>
-          <tabbar-item>
+          <tabbar-item link="/video">
               <span slot="label">视频</span>
           </tabbar-item>
-          <tabbar-item>
+          <tabbar-item link="/live">
               <span slot="label">直播</span>
           </tabbar-item>
-          <tabbar-item>
+          <tabbar-item link="/">
               <span slot="label">我的</span>
           </tabbar-item>
       </tabbar>
