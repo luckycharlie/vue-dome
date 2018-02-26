@@ -1,4 +1,4 @@
-# ch
+# dome
 
 > A Vue.js project
 
@@ -16,6 +16,9 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
+
+# run unit tests
+npm run unit
 
 # run e2e tests
 npm run e2e
