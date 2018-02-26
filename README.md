@@ -1,4 +1,4 @@
-# dome
+# vuxdome
 
 > A Vue.js project
 

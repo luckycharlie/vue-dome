@@ -1,26 +1,21 @@
 <template>
   <div>
-    <!-- <group>
-      <cell title="我的消息" value="评论我的跟帖/通知" is-link></cell>
-      <cell-box is-link>我的关注</cell-box>
-    </group> -->
+    <personal-center></personal-center>
+    <navigation-bar></navigation-bar>
   </div>
 </template>
 
 <script>
-// import { Group, Cell, CellBox } from 'vux'
+import PersonalCenter from "./PersonalCenter";
+import NavigationBar from "./NavigationBar";
 export default {
-  name: "HelloWorld",
   data() {
-    return {
-      
-    };
+    return {};
   },
-  // components:{
-  //   Group,
-  //   Cell,
-  //   CellBox
-  // }
+  components: {
+    PersonalCenter,
+    NavigationBar
+  }
 };
 </script>
 
