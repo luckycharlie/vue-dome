@@ -1,20 +1,17 @@
 <template>
   <div>
-    <personal-center></personal-center>
-    <!-- <navigation-bar></navigation-bar> -->
+    <h1>视频</h1>
   </div>
 </template>
 
 <script>
-import PersonalCenter from "./PersonalCenter";
-import NavigationBar from "./NavigationBar";
+
 export default {
   data() {
     return {};
   },
   components: {
-    PersonalCenter,
-    NavigationBar
+    
   }
 };
 </script>

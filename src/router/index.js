@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "@/components/HelloWorld";
-import HelloFromVux from "@/components/HelloFromVux";
+import PersonalCenter from "@/components/PersonalCenter";
+import HomePage from "@/components/HomePage";
+import Video from "@/components/Video";
+import Live from "@/components/Live";
 
 Vue.use(Router);
 
@@ -9,13 +11,23 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "HelloWorld",
-      component: HelloWorld
+      name: "PersonalCenter",
+      component: PersonalCenter
     },
     {
-      path: "/hellovux",
-      name: "HelloFromVux",
-      component: HelloFromVux
+      path: "/home",
+      name: "HomePage",
+      component: HomePage
+    },
+    {
+      path: "/video",
+      name: "Video",
+      component: Video
+    },
+    {
+      path: "/live",
+      name: "Live",
+      component: Live
     }
   ]
 });

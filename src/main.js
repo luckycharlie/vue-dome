@@ -4,20 +4,29 @@ import Vue from "vue";
 import FastClick from "fastclick";
 import VueRouter from "vue-router";
 import App from "./App";
-// import Home from './components/HelloFromVux'
-import Home from "./components/HelloWorld";
-import hellovux from "./components/HelloFromVux";
+import Mine from "./components/PersonalCenter";
+import HomePage from "./components/HomePage";
+import Video from "./components/Video";
+import Live from "./components/Live";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    component: Home
+    component: Mine
   },
   {
-    path: "/hellovux",
-    component: hellovux
+    path: "/home",
+    component: HomePage
+  },
+  {
+    path: "/video",
+    component: Video
+  },
+  {
+    path: "/live",
+    component: Live
   }
 ];
 
