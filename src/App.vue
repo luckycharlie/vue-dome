@@ -2,14 +2,14 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
-    <content tellChildren="i am from father"></content>
+    <assembly tellChildren="i am from father"></assembly>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Hello from "./components/Hello";
-import Content from "./components/Content";
+import Assembly from "./components/Assembly";
 export default {
   name: "App",
   data() {
@@ -17,7 +17,7 @@ export default {
       msg:"向子组件传递信息"
     };
   },
-  components: { Hello, Content }
+  components: { Hello, Assembly }
 };
 </script>
 
