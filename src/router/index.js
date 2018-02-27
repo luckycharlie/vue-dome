@@ -4,6 +4,8 @@ import PersonalCenter from "@/components/PersonalCenter";
 import HomePage from "@/components/HomePage";
 import Video from "@/components/Video";
 import Live from "@/components/Live";
+import Setting from "@/components/peoplecener/setting"; //设置
+import PersonalSettings from "@/components/peoplecener/PersonalSettings"; //个人设置
 
 Vue.use(Router);
 
@@ -28,6 +30,16 @@ export default new Router({
       path: "/live",
       name: "Live",
       component: Live
+    },
+    {
+      path: "/setting",
+      name: "Setting",
+      component: Setting
+    },
+    {
+      path: "/personalSettings",
+      name: "PersonalSettings",
+      component: PersonalSettings
     }
   ]
 });
