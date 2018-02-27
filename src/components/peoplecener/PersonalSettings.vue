@@ -9,16 +9,21 @@
 
         <group>
             <cell title="头像" @click.native="showModule" is-link></cell>
-        </group>
-
-        <actionsheet v-model="show" :menus="menus" @on-click-menu="click" show-cancel></actionsheet>
-
-        <group>
             <cell title="昵称" :value="nickname" @click.native="showNc" is-link></cell>
             <!--<x-switch title="昵称" v-model="show2"></x-switch>-->
+            <datetime v-model="timevalue"
+                      @on-change="change"
+                      title="生日"
+                      @on-cancel="log('cancel')"
+                      @on-confirm="log('confirm')"
+                      @on-hide="log('hide', $event)">
+
+            </datetime>
         </group>
 
-        <div v-transfer-dom>
+        <actionsheet v-model="show" :menus="menus" @on-click-menu="click" show-cancel></actionsheet><!--点击头像显示-->
+
+        <div v-transfer-dom><!--修改昵称-->
             <confirm v-model="show2"
                      show-input
                      ref="confirm2"
@@ -41,7 +46,8 @@
         XSwitch,
         TransferDom,
         Actionsheet,
-        Confirm
+        Confirm,
+        Datetime
     } from "vux";
     import Store from '../../store'
 
@@ -54,7 +60,8 @@
                     menu2: "从相册选择"
                 },
                 show2: false,
-                nickname: ""
+                nickname: "",
+                timevalue: '2015-11-12',
             };
         },
         directives: {
@@ -67,9 +74,11 @@
             XSwitch,
             TransferDom,
             Actionsheet,
-            Confirm
+            Confirm,
+            Datetime
         },
         methods: {
+            //头像
             showModule() {
                 this.show = true
             },
@@ -77,6 +86,7 @@
                 console.log(key, item)
             },
 
+            //昵称
             onCancel() {
                 console.log('on cancel')
             },
@@ -94,12 +104,24 @@
             },
             onConfirm2(value) {
                 this.$refs.confirm2.setInputValue('')
-                this.nickname = value
                 Store.save(value)
+                if (Store.fetch().length == "0") {
+                    this.nickname = '请设置昵称'
+                } else {
+                    this.nickname = value
+                }
             },
             showNc() {
                 this.show2 = true
-            }
+            },
+
+            //生日
+            change(value) {
+                console.log('change', value)
+            },
+            log(str1, str2 = '') {
+                console.log(str1, str2)
+            },
         },
         created() {
             if (Store.fetch().length == "0") {
