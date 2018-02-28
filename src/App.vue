@@ -1,8 +1,8 @@
 <template>
   <div id="app" style="height:100%;">
     <view-box ref="viewBox">
-        <router-view></router-view>
-        <tabbar slot="bottom" class="tabbar">
+        <router-view v-on:low-set-seen="getSeen"></router-view>
+        <tabbar slot="bottom" class="tabbar" v-if="seen">
             <tabbar-item link="/home">
                 <span slot="label">首页</span>
             </tabbar-item>
@@ -24,12 +24,22 @@
 import { ViewBox, Tabbar, TabbarItem, Group, Cell } from "vux";
 export default {
   name: "app",
+  data() {
+    return {
+      seen: true
+    };
+  },
   components: {
     ViewBox,
     Tabbar,
     TabbarItem,
     Group,
     Cell
+  },
+  methods: {
+    getSeen(value) {
+      this.seen = value;
+    }
   }
 };
 </script>

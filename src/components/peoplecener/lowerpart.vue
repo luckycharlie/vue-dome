@@ -15,26 +15,32 @@
             <cell-box is-link>我的钱包</cell-box>
             <cell-box is-link>免流量看新闻</cell-box>
             <cell-box is-link>扫一扫</cell-box>
-            <cell-box is-link link="/setting">设置</cell-box>
+            <cell-box is-link link="/setting" @click.native="seeting">设置</cell-box>
         </group>
     </div>
 </template>
 
 <script>
-    import {Group, Cell, CellBox, Badge} from "vux";
+import { Group, Cell, CellBox, Badge } from "vux";
 
-    export default {
-        data() {
-            return {};
-        },
-        components: {
-            Group,
-            CellBox,
-            Cell,
-            Badge
-        },
-        methods: {}
+export default {
+  data() {
+    return {
+      seen: false
     };
+  },
+  components: {
+    Group,
+    CellBox,
+    Cell,
+    Badge
+  },
+  methods: {
+    seeting() {
+      this.$emit("low-set-seen", this.seen); //向上传值
+    }
+  }
+};
 </script>
 
 <style scoped>

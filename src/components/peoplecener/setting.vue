@@ -37,48 +37,53 @@
 </template>
 
 <script>
-    import {
-        XHeader,
-        Actionsheet,
-        TransferDom,
-        XSwitch,
-        Cell,
-        CellBox,
-        CellFormPreview,
-        Group,
-        Badge
-    } from "vux";
+import {
+  XHeader,
+  Actionsheet,
+  TransferDom,
+  XSwitch,
+  Cell,
+  CellBox,
+  CellFormPreview,
+  Group,
+  Badge
+} from "vux";
 
-    export default {
-        directives: {
-            TransferDom
-        },
-        components: {
-            XHeader,
-            Actionsheet,
-            XSwitch,
-            Cell,
-            CellBox,
-            CellFormPreview,
-            Group,
-            Badge
-        },
-        data() {
-            return {};
-        }
+export default {
+  directives: {
+    TransferDom
+  },
+  components: {
+    XHeader,
+    Actionsheet,
+    XSwitch,
+    Cell,
+    CellBox,
+    CellFormPreview,
+    Group,
+    Badge
+  },
+  data() {
+    return {
+      
     };
+  },
+  methods: {
+    
+  }
+};
 </script>
 
 <style scoped>
-    /* .vux-header {
+/* .vux-header {
       background-color: #ffffff !important;
     } */
-    .vux-header .vux-header-title {
-        color: black !important;
-    }
+.vux-header .vux-header-title {
+  color: black !important;
+}
 
-    .vux-header .vux-header-left .left-arrow:before {
-        border: 1px solid #000 !important;
-        border-width: 1px 0 0 1px !important;
-    }
+.vux-header .vux-header-left .left-arrow:before {
+  border: 1px solid #000 !important;
+  border-width: 1px 0 0 1px !important;
+}
 </style>
